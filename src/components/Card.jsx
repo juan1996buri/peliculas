@@ -1,14 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Card = (props) => {
-  const { img, title, category, price } = props;
-
+const Card = ({ img, title, category, price, id }) => {
   return (
     <div className="bg-[#362C29]/50 p-6 rounded-2xl flex flex-col gap-2 w-full md:w-auto">
-      <img
-        src={img}
-        className="w-full xl:w-52 h-72 lg:h-64 object-cover rounded-2xl"
-      />
+      <Link to={`/${id}`}>
+        <img
+          src={img}
+          className="w-full xl:w-52 h-72 lg:h-64 object-cover rounded-2xl"
+        />
+      </Link>
+
       <h1 className="text-xl text-white">{title}</h1>
       <span className="text-gray-400">{category}</span>
       <div className="flex items-center gap-4">
